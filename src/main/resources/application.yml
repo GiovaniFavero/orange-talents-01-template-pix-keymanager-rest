@@ -1,0 +1,11 @@
+micronaut:
+  application:
+    name: pixKeymanagerRest
+
+grpc:
+  client:
+    plaintext: true
+    max-retry-attempts: 10
+  channels:
+    keyManager:
+      address: 'localhost:50051'
