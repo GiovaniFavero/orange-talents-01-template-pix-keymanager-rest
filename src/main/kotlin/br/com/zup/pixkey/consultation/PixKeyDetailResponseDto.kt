@@ -25,4 +25,9 @@ class PixKeyDetailResponseDto (response: PixKeyConsultationResponse) {
         Pair("branch", response.key.account.branch),
         Pair("number", response.key.account.accountNumber),
     )
+
+    override fun toString(): String {
+        return "PixKeyDetailResponseDto(pixId='$pixId', keyType=$keyType, key='$key', accountType='$accountType', account=$account)"
     }
+
+}

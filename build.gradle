@@ -31,10 +31,15 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     implementation("io.micronaut:micronaut-validation")
-    implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
+   // implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
     implementation("org.hibernate:hibernate-validator:5.2.4.Final")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    testImplementation("io.micronaut:micronaut-http-client")
+    testCompile("org.mockito:mockito-junit-jupiter:2.22.0")
+    testImplementation('org.mockito:mockito-inline:2.13.0')
+    testCompile("org.junit.jupiter:junit-jupiter-params:5.7.0")
     
 }
 

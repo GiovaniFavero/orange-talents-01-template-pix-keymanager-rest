@@ -22,7 +22,7 @@ class GlobalExceptionHandler : ExceptionHandler<StatusRuntimeException, HttpResp
         logger.info("Exception from grpc server: $statusCode - $statusDescription")
         val (httpStatus, message) = when (statusCode) {
             Status.NOT_FOUND.code -> Pair(HttpStatus.NOT_FOUND, statusDescription)
-            Status.INVALID_ARGUMENT.code -> Pair(HttpStatus.NOT_FOUND, "Request data are invalid!")
+            Status.INVALID_ARGUMENT.code -> Pair(HttpStatus.BAD_REQUEST, "Request data are invalid!")
             Status.ALREADY_EXISTS.code -> Pair(HttpStatus.UNPROCESSABLE_ENTITY, statusDescription)
             else -> {
                 logger.error("Unexpected error: ${exception.javaClass.name} when processing the grpc requisition")
